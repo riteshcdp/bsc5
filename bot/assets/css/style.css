@@ -1,0 +1,77 @@
+/* Plant Physiology and Metabolism — BOT-DSM-511. Plain-CSS fallback: readable without any CDN. */
+:root{--ink:#1f2937;--muted:#5b6470;--line:#e5e7eb;--paper:#fffdf8;--green:#2f5d3a;--green2:#e8f0e6;--accent:#b45309;--radius:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,serif;font-size:17px;line-height:1.75}
+body,button,input{font-family:Georgia,serif}
+header.site{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+.nav{max-width:760px;margin:0 auto;padding:12px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.nav a{color:var(--ink);text-decoration:none;font-family:Arial,Helvetica,sans-serif;font-size:15px}
+.nav a.brand{font-weight:700;color:var(--green);font-size:18px}
+.nav a:hover{text-decoration:underline}
+main{max-width:760px;margin:0 auto;padding:22px 18px 80px}
+h1,h2,h3{font-family:Georgia,serif;line-height:1.25;color:#14281a}
+h1{font-size:2rem} h2{font-size:1.55rem;margin-top:2.2rem;border-top:1px solid var(--line);padding-top:1.2rem} h3{font-size:1.25rem;margin-top:1.6rem}
+p,li{font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:1.7}
+a{color:var(--green)}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:18px;background:#fff;margin:14px 0}
+.def{border-left:5px solid var(--green);background:var(--green2);padding:14px 18px;border-radius:0 12px 12px 0}
+.trap{background:#fef3c7;border:1px solid #fcd34d;border-radius:12px;padding:14px 18px}
+.flow{display:flex;flex-direction:column;gap:0;margin:16px 0}
+.flow-step{border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 14px;position:relative}
+.flow-arrow{text-align:center;color:var(--green);font-weight:700;line-height:1.2}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-family:Arial,Helvetica,sans-serif;font-size:15px;line-height:1.5}
+@media(max-width:600px){table{display:block;overflow-x:auto}}
+th,td{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}
+th{background:var(--green2)}
+figure{margin:20px 0} figure img,figure svg{width:100%;height:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+figcaption{font-family:Arial,Helvetica,sans-serif;font-size:14px;color:var(--muted);margin-top:8px;line-height:1.5}
+button,.btn{display:inline-block;border:1px solid var(--green);background:var(--green);color:#fff;padding:10px 16px;border-radius:999px;cursor:pointer;font-family:Arial,Helvetica,sans-serif;font-size:15px;text-decoration:none}
+button.secondary,.btn.secondary{background:#fff;color:var(--green)}
+.quiz-q,.key{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff;margin:14px 0}
+.answer{display:none;margin-top:12px;padding:12px;background:var(--green2);border-radius:10px}
+.answer.open{display:block}
+.opt{width:100%;text-align:left;background:#fff;color:var(--ink);border:1px solid var(--line);margin:6px 0}
+.opt:hover{border-color:var(--green)}
+.searchbox{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font-size:16px}
+.toc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.toc a{display:block;padding:3px 0}
+.small{font-size:14px;color:var(--muted);font-family:Arial,Helvetica,sans-serif}
+.pill{display:inline-block;background:var(--green2);color:var(--green);border-radius:999px;padding:3px 10px;font-family:Arial,Helvetica,sans-serif;font-size:13px;margin:2px}
+#topBtn{position:fixed;right:16px;bottom:16px;display:none}
+.checklist label{display:block;padding:6px 0;font-family:Arial,Helvetica,sans-serif}
+@media(min-width:900px){main{max-width:780px} h1{font-size:2.4rem} body{font-size:18px}}
+@media print{header.site,#topBtn,.searchbox{display:none} main{max-width:100%}}
+
+/* --- Rebuild: mobile-first responsive, header/footer, progress --- */
+html,body{overflow-x:hidden}
+img,svg,video{max-width:100%;height:auto}
+figure svg text{font-family:Arial,Helvetica,sans-serif}
+table{display:block;overflow-x:auto;width:100%}
+table table{display:table}
+.nav{row-gap:8px}
+.nav a{padding:6px 4px}
+.header-progress{margin-left:auto;font-family:Arial,Helvetica,sans-serif;font-size:13px;background:var(--green2);color:var(--green);border-radius:999px;padding:4px 10px;white-space:nowrap}
+footer.site{border-top:1px solid var(--line);background:#fff;margin-top:20px}
+.footer-inner{max-width:780px;margin:0 auto;padding:22px 18px 40px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.6;color:var(--muted)}
+.footer-inner a{margin-right:10px;display:inline-block;padding:3px 0}
+.progress-bar{height:12px;background:var(--line);border-radius:999px;overflow:hidden;margin:8px 0}
+.progress-bar > span{display:block;height:100%;background:var(--green);border-radius:999px}
+.unit-progress{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff;margin:10px 0}
+.unit-progress p{margin:4px 0}
+.opt{width:100%;min-height:48px}
+.quiz-opt.correct{border-color:#2f5d3a;border-width:2px;background:#e8f0e6}
+.quiz-opt.wrong{border-color:#b45309;border-width:2px;background:#fef3c7}
+@media(max-width:600px){
+  main{padding:16px 14px 60px}
+  h1{font-size:1.6rem} h2{font-size:1.3rem} h3{font-size:1.15rem}
+  body,p,li{font-size:17px}
+  .nav{padding:10px 14px}
+  .nav a.brand{width:100%}
+  .header-progress{margin-left:0}
+  .btn,button.btn{display:block;width:100%;text-align:center;margin:8px 0}
+  .opt{font-size:16px;padding:12px 14px}
+  figure{margin:16px 0}
+  .footer-inner{padding:18px 14px 36px}
+}
+@media(min-width:900px){.footer-inner{max-width:780px}}

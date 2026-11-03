@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="240" viewBox="0 0 700 240" role="img" aria-label="Pressure flow model diagram">
+<rect x="10" y="60" width="180" height="120" rx="12" fill="#e8f0e6" stroke="#2f5d3a"/>
+<text x="100" y="105" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">SOURCE LEAF</text>
+<text x="100" y="130" text-anchor="middle" font-family="Arial" font-size="13">Sucrose loaded</text>
+<text x="100" y="150" text-anchor="middle" font-family="Arial" font-size="13">Water enters, pressure rises</text>
+<rect x="260" y="60" width="180" height="120" rx="12" fill="#ffffff" stroke="#2f5d3a"/>
+<text x="350" y="105" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">SIEVE TUBE</text>
+<text x="350" y="130" text-anchor="middle" font-family="Arial" font-size="13">Bulk flow</text>
+<text x="350" y="150" text-anchor="middle" font-family="Arial" font-size="13">High to low pressure</text>
+<rect x="510" y="60" width="180" height="120" rx="12" fill="#fef3c7" stroke="#b45309"/>
+<text x="600" y="105" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">SINK</text>
+<text x="600" y="130" text-anchor="middle" font-family="Arial" font-size="13">Sucrose unloaded</text>
+<text x="600" y="150" text-anchor="middle" font-family="Arial" font-size="13">Water leaves, pressure falls</text>
+<text x="215" y="125" font-family="Arial" font-size="28" fill="#2f5d3a">→</text>
+<text x="465" y="125" font-family="Arial" font-size="28" fill="#2f5d3a">→</text>
+<text x="350" y="220" text-anchor="middle" font-family="Arial" font-size="14">Pressure flow (Münch mass flow) model</text>
+</svg>
