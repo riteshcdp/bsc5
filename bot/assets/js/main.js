@@ -68,8 +68,28 @@
         sec.style.display = (!q || sec.textContent.toLowerCase().indexOf(q) > -1) ? '' : 'none';
       });
     });
+    // Final version: toggle menu + redesigned back-to-top (400px threshold, raised near page bottom).
+    var menuBtn = document.getElementById('menuToggle'), menu = document.getElementById('siteMenu');
+    function closeMenu() { if (menu && menuBtn) { menu.hidden = true; menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.setAttribute('aria-label', 'Open menu'); } }
+    if (menuBtn && menu) {
+      menuBtn.addEventListener('click', function (e) { e.stopPropagation(); var open = menu.hidden; menu.hidden = !open; menuBtn.setAttribute('aria-expanded', String(open)); menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); });
+      menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+      document.addEventListener('click', function (e) { if (!menu.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) closeMenu(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+    }
+    var headerEl = document.querySelector('header.site');
     var top = document.getElementById('topBtn');
-    if (top) { window.addEventListener('scroll', function () { top.style.display = window.scrollY > 500 ? 'inline-block' : 'none'; }); top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+    function onScroll() {
+      if (headerEl) headerEl.classList.toggle('scrolled', window.scrollY > 10);
+      if (top) {
+        var show = window.scrollY > 400;
+        top.classList.toggle('show', show);
+        var nearBottom = (document.documentElement.scrollHeight - window.scrollY - window.innerHeight) < 140;
+        top.classList.toggle('raised', show && nearBottom);
+      }
+    }
+    if (top) { window.addEventListener('scroll', onScroll, { passive: true }); onScroll(); top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }); }
+    else if (headerEl) { window.addEventListener('scroll', onScroll, { passive: true }); onScroll(); }
     // Checklists: persist under bot511-<unit>, update progress meta on every tick.
     document.querySelectorAll('[data-checklist]').forEach(function (list) {
       var unit = list.getAttribute('data-checklist'), key = 'bot511-' + unit;
